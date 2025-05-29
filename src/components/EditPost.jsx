@@ -34,8 +34,6 @@ import {
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
 
 export default function EditPost() {
   const { id } = useParams();
@@ -363,35 +361,7 @@ export default function EditPost() {
 
                   <div className="space-y-2">
                     <Label htmlFor="content">Content</Label>
-                    <div className="min-h-[300px]">
-                      <ReactQuill
-                        id="content"
-                        theme="snow"
-                        value={formData.content}
-                        onChange={handleContentChange}
-                        className="h-64"
-                        modules={{
-                          toolbar: [
-                            [{ header: [1, 2, 3, 4, 5, 6, false] }],
-                            [
-                              "bold",
-                              "italic",
-                              "underline",
-                              "strike",
-                              "blockquote",
-                            ],
-                            [
-                              { list: "ordered" },
-                              { list: "bullet" },
-                              { indent: "-1" },
-                              { indent: "+1" },
-                            ],
-                            ["link", "image"],
-                            ["clean"],
-                          ],
-                        }}
-                      />
-                    </div>
+                    <div className="min-h-[300px]"></div>
                   </div>
                 </CardContent>
               </Card>
