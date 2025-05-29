@@ -68,7 +68,7 @@ export default function UsersPage() {
     const fetchUsersOverview = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/users/useroverview"
+          "https://blog-backend-a3p6.onrender.com/api/users/useroverview"
         );
         setUserInfo(response.data);
       } catch (error) {
@@ -80,14 +80,17 @@ export default function UsersPage() {
       try {
         setLoading(true);
         // Add pagination and filter parameters to the API request
-        const response = await axios.get("http://localhost:8080/api/users", {
-          params: {
-            page: currentPage,
-            limit: usersPerPage,
-            search: searchQuery || undefined,
-            role: role !== "all" ? role : undefined,
-          },
-        });
+        const response = await axios.get(
+          "https://blog-backend-a3p6.onrender.com/api/users",
+          {
+            params: {
+              page: currentPage,
+              limit: usersPerPage,
+              search: searchQuery || undefined,
+              role: role !== "all" ? role : undefined,
+            },
+          }
+        );
 
         setUsers(response.data.users);
         setTotalUsers(response.data.total || response.data.users.length);
@@ -207,7 +210,7 @@ export default function UsersPage() {
             className="w-full md:w-auto bg-my-primary text-white"
             onClick={() => {
               window.open(
-                "http://localhost:5173/sign-up",
+                "https://blog-frontend-react-one.vercel.app//sign-up",
                 "_blank",
                 "noopener,noreferrer"
               );

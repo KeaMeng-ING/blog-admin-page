@@ -49,7 +49,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/admin/dashboard"
+          "https://blog-backend-a3p6.onrender.com/api/admin/dashboard"
         );
         setData(response.data);
       } catch (error) {
@@ -60,7 +60,7 @@ const Dashboard = () => {
     const fetchRecentPosts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/admin/recentPost"
+          "https://blog-backend-a3p6.onrender.com/api/admin/recentPost"
         );
         console.log(response.data);
         setRecentPosts(response.data);
@@ -126,7 +126,7 @@ const Dashboard = () => {
                 className="flex items-center gap-2 bg-my-primary text-white px-4 py-3 rounded-lg font-medium hover:bg-my-primary-100 transition duration-300"
                 onClick={() => {
                   window.open(
-                    "http://localhost:5173/blog/create",
+                    "https://blog-frontend-react-one.vercel.app//blog/create",
                     "_blank",
                     "noopener,noreferrer"
                   );

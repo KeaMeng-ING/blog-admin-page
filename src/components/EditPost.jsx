@@ -67,13 +67,13 @@ export default function EditPost() {
 
         // Fetch post data
         const postResponse = await axios.get(
-          `http://localhost:8080/api/posts/${id}`
+          `https://blog-backend-a3p6.onrender.com/api/posts/${id}`
         );
         const post = postResponse.data.post;
 
         // Fetch categories
         const categoriesResponse = await axios.get(
-          "http://localhost:8080/api/categories"
+          "https://blog-backend-a3p6.onrender.com/api/categories"
         );
 
         setFormData({
@@ -195,7 +195,7 @@ export default function EditPost() {
       }
 
       const response = await axios.put(
-        `http://localhost:8080/api/posts/${id}`,
+        `https://blog-backend-a3p6.onrender.com/api/posts/${id}`,
         postData
       );
 
@@ -215,13 +215,18 @@ export default function EditPost() {
   // Preview post
   const handlePreview = () => {
     // Open the post preview in a new tab
-    window.open(`http://localhost:5173/blog/${formData.slug}`, "_blank");
+    window.open(
+      `https://blog-frontend-react-one.vercel.app//blog/${formData.slug}`,
+      "_blank"
+    );
   };
 
   // Delete post
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:8080/api/posts/${id}`);
+      await axios.delete(
+        `https://blog-backend-a3p6.onrender.com/api/posts/${id}`
+      );
       navigate("/posts");
     } catch (error) {
       console.error("Error deleting post:", error);

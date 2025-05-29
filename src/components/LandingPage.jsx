@@ -18,7 +18,7 @@ const LandingPage = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/users/login",
+        "https://blog-backend-a3p6.onrender.com/api/users/login",
         { email, password }
       );
 

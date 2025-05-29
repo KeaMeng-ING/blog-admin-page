@@ -8,7 +8,7 @@ export default function RecentUsers() {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/admin/recentUser"
+          "https://blog-backend-a3p6.onrender.com/api/admin/recentUser"
         );
         setUsers(response.data);
       } catch (error) {

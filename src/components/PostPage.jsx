@@ -66,15 +66,18 @@ export default function PostPage() {
       try {
         setLoading(true);
         // Add pagination and filter parameters to the API request
-        const response = await axios.get("http://localhost:8080/api/posts", {
-          params: {
-            page: currentPage,
-            limit: postsPerPage,
-            search: searchQuery || undefined,
-            status: status !== "all" ? status : undefined,
-            category: category !== "all" ? category : undefined,
-          },
-        });
+        const response = await axios.get(
+          "https://blog-backend-a3p6.onrender.com/api/posts",
+          {
+            params: {
+              page: currentPage,
+              limit: postsPerPage,
+              search: searchQuery || undefined,
+              status: status !== "all" ? status : undefined,
+              category: category !== "all" ? category : undefined,
+            },
+          }
+        );
 
         setPosts(response.data.posts);
         setTotalPosts(response.data.total || response.data.posts.length);
@@ -98,7 +101,7 @@ export default function PostPage() {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/categories"
+          "https://blog-backend-a3p6.onrender.com/api/categories"
         );
         setCategories(response.data.categories || []);
       } catch (error) {
@@ -364,7 +367,7 @@ export default function PostPage() {
                           <DropdownMenuContent align="end">
                             <DropdownMenuLabel>Actions</DropdownMenuLabel>
                             <NavLink
-                              to={`http://localhost:5173/blog/${post.slug}`}
+                              to={`https://blog-frontend-react-one.vercel.app//blog/${post.slug}`}
                               target="_blank"
                               rel="noopener noreferrer"
                             >

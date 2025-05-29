@@ -16,7 +16,7 @@ export default function Overview() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/admin/category"
+          "https://blog-backend-a3p6.onrender.com/api/admin/category"
         );
 
         setData(response.data);
