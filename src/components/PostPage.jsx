@@ -376,7 +376,7 @@ export default function PostPage() {
                                 View
                               </DropdownMenuItem>
                             </NavLink>
-                            <NavLink to={`edit/${post.id}`}>
+                            <NavLink>
                               <DropdownMenuItem>
                                 <Edit className="mr-2 h-4 w-4" />
                                 Edit
