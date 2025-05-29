@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "vercel-build": "npm install --legacy-peer-deps && vite build"
+    "vercel-build": "npm install react-quill --legacy-peer-deps && npm install --legacy-peer-deps && vite build"
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.1.13",
